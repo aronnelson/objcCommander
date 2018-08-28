@@ -5,11 +5,12 @@ These are the steps to create a Siri Shortcut using Objective C. Very easy and q
 
 1: Enable Siri in Capabilities tab of your project.
 
-2: Add the Intents framework in the Linked Frameworks and Libraries tab.Under target->General
+2: Add the Intents framework in the Linked Frameworks and Libraries tab. Under target->General
 
 3: In the project plist, add an entry: NSUserActivityTypes with string = project bundle ID.activity name. For example: com.awesomeapps.myawesomeapp.myactivity
 
-4: Create a NSUserActivity and make it current once. Set two variables to true, setEligibleForSearch and setEligibleForPrediction. 
+4: Create a NSUserActivity. Set two variables to true, setEligibleForSearch and setEligibleForPrediction. Make it current once.
+
 This will make it available to Siri.
 
 For example: (k_activityID is your bundle ID+activity name For example: com.awesomeapps.myawesomeapp.myactivity)
