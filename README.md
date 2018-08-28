@@ -33,3 +33,4 @@ if ([theActivity.title isEqualToString:k_activityID]){
         
     }
     
+6: In settings app->Siri you will be able to see your Shorcuts and record a command to execute them.
