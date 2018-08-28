@@ -9,9 +9,26 @@ These are the steps to create a Siri Shortcut using Objective C. Very easy and q
 
 3: In the project plist, add an entry: NSUserActivityTypes with string = project bundle ID.activity name. For example: com.awesomeapps.myawesomeapp.myactivity
 
-4: Create a NSUserActivity and make it current once. Set two variable to true, setEligibleForSearch and setEligibleForPrediction. 
+4: Create a NSUserActivity and make it current once. Set two variables to true, setEligibleForSearch and setEligibleForPrediction. 
 This will make it available to Siri.
+
+For example: (k_activityID is your bundle ID+activity name For example: com.awesomeapps.myawesomeapp.myactivity)
+
+ NSUserActivity *theActivity = [[NSUserActivity alloc]initWithActivityType:k_activityID];
+    theActivity.title = @"Run Me";
+    [theActivity setEligibleForSearch:true];
+    [theActivity setEligibleForPrediction:true];
+    theActivity.persistentIdentifier = k_activityID;
+    theActivity.suggestedInvocationPhrase = @"Run Me";
+    self.view.userActivity = theActivity;
+    [theActivity becomeCurrent];
+    
  
 5:Handle the activiy in: -(BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> * _Nullable))restorationHandler
 	You can query the userActivity.title to verify the activity.
 	
+if ([theActivity.title isEqualToString:k_activityID]){
+        // do the activity
+        
+    }
+    
