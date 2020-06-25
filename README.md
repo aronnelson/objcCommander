@@ -25,7 +25,7 @@ For example: (k_activityID is your bundle ID+activity name For example: com.awes
     [theActivity becomeCurrent];
     
  
-5:Handle the activiy in: -(BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> * _Nullable))restorationHandler
+5:Handle the activity in: -(BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> * _Nullable))restorationHandler
 	You can query the userActivity.title to verify the activity.
 	
 if ([theActivity.title isEqualToString:k_activityID]){
